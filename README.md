@@ -16,22 +16,25 @@ Kanker payudara menjadi jenis kanker yang menempati posisi penyumbang kematian t
 ### Problem Statements
 berdasarkan latar belakang diatas, berikut ini rumusan masalah yang dapat diselesaikan pada proyek ini:
 1. Bagaimana cara melakukan pra-pemrosesan pada data penyakit kanker payudara yang akan digunakan untuk membuat model yang baik?
-2. Model Machine Learning apa yang paling efektif untuk klasifikasi data Breast Cancer ini?
-3. Berapa nilai akurasi terbaik yang didapatkan dengan menggunakan machine learning dan dari metode apa?
+2. Fitur apa saja yang memiliki korelasi tinggi terhadap target?
+3. Model Machine Learning apa yang paling efektif untuk klasifikasi data Breast Cancer ini?
 
 ### Goals
-Melakukan pra-pemrosesan dengan baik agar dapat digunakan dalam pembuatan model.
-Mengetahui cara membuat model machine learning untuk memprediksi penyakit kanker payudara.
-Membuat model machine learning dengan nilai akurasi yang mencapai 95%.
+1. Mengetahui cara pra-pemrosesan dengan baik agar dapat digunakan dalam pembuatan model.
+2. Mengetahui fitur apa saja yang memiliki korelasi mendekati 1 sehingga berpengaruh terhadap target.
+3. Mengetahui cara membuat model machine learning untuk memprediksi penyakit kanker payudara.
 
 ### Solution Statements
 Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
+
 Untuk pra-pemrosesan data dapat dilakukan beberapa teknik, diantaranya :
 - Melakukan drop kolom pada kolom ID.
-- Mengatasi masalah data yang kosong dengan nilai rata-rata kolom (mean substitution).
 - Melakukan Encoding terhadap kolom yang bertipe object.
-- Melakukan pembagian dataset menjadi dua bagian dengan rasio 80% untuk data latih dan 20% untuk     data uji.
+- Melakukan pembagian dataset menjadi dua bagian dengan rasio 80% untuk data latih dan 20% untuk data uji.
 - Melakukan Standard Scaler.
+
+- Melakukan korelasi untuk mengetahui fitur mana saja yang nilai korelasinya mendekati 1 terhadap target yang ada pada tahap EDA
+
 - Untuk pembuatan model dipilih penggunaan model dengan algoritma SVM dan Logistic Regression. Algoritma tersebut dipilih karena mudah digunakan dan juga cocok untuk kasus ini. 
 
 
@@ -70,8 +73,9 @@ Setiap karakteristik dihitung dalam tiga kategori: Mean (rata-rata), Standard Er
 1 Fitur Diagnostik: Menentukan klasifikasi kanker.
 1 Fitur Identitas: Untuk penandaan data.
 
-**Visualisasi Fitur Diagnosis**:
-(![image](https://github.com/user-attachments/assets/b89d1a1b-0f66-4303-8a73-ff01a5bf716e)
+#### Explortory Data Analysis
+- Tidak ada data yang kosong/NaN/Duplikat
+
 
 
 ## Data Preparation
