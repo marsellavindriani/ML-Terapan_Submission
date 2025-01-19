@@ -133,6 +133,7 @@ Optimasi dilakukan untuk memaksimalkan margin antara dua kelas sambil meminimalk
 
 ![image](https://github.com/user-attachments/assets/2b5907e9-b129-4b6f-a249-1d2e2468e257)
 
+Hasil confussion matriks SVM Classifier adalah 68 (True Positive) 2 (False Negative) 3 (False Positive) dan 41 (True Negative)
 
 **Akurasi SVM Model**
 
@@ -166,6 +167,7 @@ Menentukan threshold (biasanya 0.5) untuk memutuskan kelas.
 
 ![image](https://github.com/user-attachments/assets/a56e30b7-1a68-4683-a6e5-f3f781bd2195)
 
+Hasil confussion matriks LogReg Classifier adalah 70 (True Positive) 2 (False Negative) 1 (False Positive) dan 41 (True Negative)
 
 **Akurasi Logistic Regression Model**
 
