@@ -71,6 +71,8 @@ df = pd.read_csv(path)
 
 df.head(5)
 
+"""## Exploratory Data Analysis"""
+
 # Melihat berapa banyak jumlah kolom dan baris pada data
 df.shape
 
@@ -104,8 +106,6 @@ df.describe()
 df.duplicated().sum()
 
 """Tidak ada data yang duplikat
-
-## Exploratory Data Analysis
 
 Melakukan eksplorasi tiap fitur yang ada pada data untuk mendapatkan insight
 """
