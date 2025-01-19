@@ -163,21 +163,25 @@ Menentukan threshold (biasanya 0.5) untuk memutuskan kelas.
 - Tidak Optimal pada Data Non-linear: Harus diubah dengan fitur tambahan atau teknik polinomial.
 
 **Confussion Matrix Logistic Regression Model**
+
 ![image](https://github.com/user-attachments/assets/a56e30b7-1a68-4683-a6e5-f3f781bd2195)
 
 
 **Akurasi Logistic Regression Model**
+
 ![image](https://github.com/user-attachments/assets/32347ff9-2530-4a96-9a10-b8672a06a509)
 
 
 **Classification Report Logistic Regression Model**
+
 ![image](https://github.com/user-attachments/assets/b361b652-23e5-43c1-aea7-435b783bf94e)
 
 
 
 
 ## Evaluation
-Setelah dilakukan pra-pemrosesan pada dataset, langkah selanjutnya adalah modeling terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu SVM dan Logistik Regression dengan tanpa parameter tambahan. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji. Terakhir kedua model akan diukur nilai akurasinya. Perbandingan Hasil dari kedua model adalah berikut : 
+Setelah dilakukan pra-pemrosesan pada dataset, langkah selanjutnya adalah modeling terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu SVM dan Logistik Regression dengan tanpa parameter tambahan. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji. Terakhir kedua model akan diukur nilai akurasinya. Perbandingan Hasil dari kedua model adalah berikut :
+
 ![image](https://github.com/user-attachments/assets/7bd2085e-70f2-42c6-a9e6-26e0c2090335)
 
 
