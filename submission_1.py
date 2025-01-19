@@ -71,7 +71,10 @@ df = pd.read_csv(path)
 
 df.head(5)
 
-"""## Exploratory Data Analysis"""
+"""## Exploratory Data Analysis
+
+Melakukan eksplorasi tiap fitur yang ada pada data untuk mendapatkan insight
+"""
 
 # Melihat berapa banyak jumlah kolom dan baris pada data
 df.shape
@@ -105,10 +108,7 @@ df.describe()
 # Melihat apakah ada data yang duplikat
 df.duplicated().sum()
 
-"""Tidak ada data yang duplikat
-
-Melakukan eksplorasi tiap fitur yang ada pada data untuk mendapatkan insight
-"""
+"""Tidak ada data yang duplikat"""
 
 df['diagnosis'].value_counts()
 
@@ -225,7 +225,7 @@ plt.ylabel('True Labels')
 plt.title('Confusion Matrix SVM Model')
 plt.show()
 
-"""Hasil confussion matriks SVM Classifier adalah 68 (True Positive) 2 (False Negative) 3 (False Positive) dan 41 (True Netagive)"""
+"""Hasil confussion matriks SVM Classifier adalah 68 (True Positive) 2 (False Negative) 3 (False Positive) dan 41 (True Negative)"""
 
 accuracy_svm = accuracy_score(y_test, y_pred)
 accuracy_svm
@@ -233,12 +233,6 @@ accuracy_svm
 """Model SVM memiliki nilai akurasi sebesar 95.6 %"""
 
 print(classification_report(y_test,y_pred))
-
-report_svm = classification_report(y_test, y_pred, output_dict=True)
-
-report_df = pd.DataFrame(report_svm).transpose()
-
-display(report_df)
 
 """# Logistic Regression Classifier"""
 
@@ -266,20 +260,14 @@ plt.ylabel('True Labels')
 plt.title('Confusion Matrix Logistic Regression Model')
 plt.show()
 
-"""Hasil confussion matriks LogReg Classifier adalah 70 (True Positive) 2 (False Negative) 1 (False Positive) dan 41 (True Netagive)"""
+"""Hasil confussion matriks LogReg Classifier adalah 70 (True Positive) 2 (False Negative) 1 (False Positive) dan 41 (True Negative)"""
 
 accuracy_logreg = accuracy_score(y_test, y_pred)
 accuracy_logreg
 
 """Model logistik regresi memiliki nilai akurasi sebesar 97.3%"""
 
-report_logres = classification_report(y_test, y_pred, output_dict=True)
-
-report_df = pd.DataFrame(report_logres).transpose()
-
-print(report_df)
-
-display(report_df)
+print(classification_report(y_test,y_pred))
 
 """# Evaluation"""
 
