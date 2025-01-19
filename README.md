@@ -77,14 +77,22 @@ Setiap karakteristik dihitung dalam tiga kategori: Mean (rata-rata), Standard Er
 
 - Tidak ada data yang kosong/NaN/Duplikat
 
+
+
 **Visualisasi Fitur Diagnosis (Target)**
+
 ![image](https://github.com/user-attachments/assets/d656b6d5-b3f6-4257-b835-46e3993f64fb)
+
 Target analisis data ini adalah fitur "diagnosis" yang memiliki 357 data Benign (Jinak) dan 212 data Malignant (Ganas).
 
+
 **Heatmap korelasi fitur terhadap Target**
+
 ![image](https://github.com/user-attachments/assets/144e29df-f941-4321-a85c-6e816e4412bd)
 
+
 **8 Fitur yang memiiki nilai korelasi mendekati 1 terhadap Target yang artinya mempengaruhi target**
+
 ![image](https://github.com/user-attachments/assets/75f08175-ecf5-423e-ac69-8c5ce810f7f0)
 
 Fitur yang memiliki nilai korelasi mendekati 1 terhadap target antara lain :
