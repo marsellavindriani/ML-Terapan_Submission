@@ -27,19 +27,19 @@ berdasarkan latar belakang diatas, berikut ini rumusan masalah yang dapat disele
 ### Solution Statements
 Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
 
-Untuk pra-pemrosesan data dapat dilakukan beberapa teknik, diantaranya :
+1. Untuk pra-pemrosesan data dapat dilakukan beberapa teknik, diantaranya :
 - Melakukan drop kolom pada kolom ID.
 - Melakukan Encoding terhadap kolom yang bertipe object.
 - Melakukan pembagian dataset menjadi dua bagian dengan rasio 80% untuk data latih dan 20% untuk data uji.
 - Melakukan Standard Scaler.
-
-- Melakukan korelasi untuk mengetahui fitur mana saja yang nilai korelasinya mendekati 1 terhadap target yang ada pada tahap EDA
-
-- Untuk pembuatan model dipilih penggunaan model dengan algoritma SVM dan Logistic Regression. Algoritma tersebut dipilih karena mudah digunakan dan juga cocok untuk kasus ini. 
+2. Melakukan korelasi untuk mengetahui fitur mana saja yang nilai korelasinya mendekati 1 terhadap target yang ada pada tahap EDA
+3. Untuk pembuatan model dipilih penggunaan model dengan algoritma SVM dan Logistic Regression. Algoritma tersebut dipilih karena mudah digunakan dan juga cocok untuk kasus ini. 
 
 
 ## Data Understanding
-## Dataset
+Tahap ini memberikan informasi seperti jumlah data, kondisi data, dan informasi mengenai data yang digunakan, tautan sumber data (link download), dan menguraikan seluruh variabel atau fitur pada data.
+
+### Dataset
 | Jenis | Keterangan |
 | ------ | ------ |
 | Sumber | [Kaggle : Breast Cancer Dataset](https://www.kaggle.com/datasets/yasserh/breast-cancer-dataset)|
@@ -47,8 +47,10 @@ Untuk pra-pemrosesan data dapat dilakukan beberapa teknik, diantaranya :
 | Kategori | Kesehatan|
 | Jumlah data | 569 data|
 
+### Explortory Data Analysis
+Data berisi 569 data dengan 32 fitur
 
-### Variabel-variabel pada Breast Cancer dataset adalah sebagai berikut:
+### Fitur pada Breast Cancer dataset adalah sebagai berikut:
 - **id** merupakan parameter bernilai unique. Parameter ini tidak penting untuk dimasukkan kedalam model, oleh karena itu parameter ini di drop.
 - **Diagnosis** Klasifikasi tumor, dengan nilai 'M' untuk Malignant (ganas) dan 'B' untuk Benign (jinak).
 #### Karakteristik Sel:
@@ -73,23 +75,31 @@ Setiap karakteristik dihitung dalam tiga kategori: Mean (rata-rata), Standard Er
 1 Fitur Diagnostik: Menentukan klasifikasi kanker.
 1 Fitur Identitas: Untuk penandaan data.
 
-#### Explortory Data Analysis
 - Tidak ada data yang kosong/NaN/Duplikat
+
+**Visualisasi Fitur Diagnosis (Target)**
+![image](https://github.com/user-attachments/assets/d656b6d5-b3f6-4257-b835-46e3993f64fb)
+Target analisis data ini adalah fitur "diagnosis" yang memiliki 357 data Benign (Jinak) dan 212 data Malignant (Ganas).
+
+**Heatmap korelasi fitur terhadap Target**
+![image](https://github.com/user-attachments/assets/144e29df-f941-4321-a85c-6e816e4412bd)
+
+**8 Fitur yang memiiki nilai korelasi mendekati 1 terhadap Target yang artinya mempengaruhi target**
+![image](https://github.com/user-attachments/assets/75f08175-ecf5-423e-ac69-8c5ce810f7f0)
+Fitur yang memiliki nilai korelasi mendekati 1 terhadap target antara lain :
+radius_mean, parameter_mean, area_mean, concave_points_mean, radius_worst, perimeter_worst, area_worst, dan convcave_points_worst.
 
 
 
 ## Data Preparation
- 1. Drop kolom **id** karena mempunyai karakteristik unik dan memiliki nilai korelasi yang kecil dengan target sehingga dapat dibuang.
- 2. Melihat apakah ada data NaN dan Null. Setelah melihat dataset ini bersih dari data baik NaN ataupun Null.
- 3. Pada fitur "diagnosis", Mengubah M menjadi angka 1 dan B menjadi angka 0 agar mempermudah encoding.
- 4. Melakukan Label Encoder dan Melihat korelasi antara target dan fitur-fitur lainnya.
-5. Melakukan pembagian dataset menjadi dengan 80% untuk data latih dan 20% untuk data uji Setelah melakukan pra-pemrosesan ke dataset, selanjutnya adalah membagi dataset untuk data latih dan data uji dengan rasio 80:20. Data latih adalah data yang hanya untuk melatih model, sedangkan data uji adalah data yang hanya sebagai ujicoba model. Pembagian dataset ini menggunakan modul train_test_split dari scikit-learn.
-6. Melakukan standardisasi data pada semua fitur data. Tahap terakhir yaitu melakukan standarisasi data. Hal ini dilakukan untuk membuat semua fitur berada dalam skala data yang sama yaitu dengan range 0-1.
+Tahap ini dilakukan untuk mempersiapkan data untuk memasuki tahap modeling. Adapun beberapa langkah yang dilakukan pada data preparation antara lain :
+1. Drop kolom "id"
+2. Melakukan label encoding untuk mengurangi dimensi data
+3. Mendefinisikan kolom X sebagai target dan y sebagai fitur
+4. Split data training dan testing 
+5. Melakukan standarisari data
 
-**Heatmap korelasi**
-![image](https://github.com/user-attachments/assets/f3bd9c04-43cc-4fdc-af90-0b025514d12c)
-
-
+   
 ## Modeling
 Berikut cara kerja, kelebihan dan kekurangan algoritma SVM dan Logistic Regression:
 
@@ -110,6 +120,18 @@ Optimasi dilakukan untuk memaksimalkan margin antara dua kelas sambil meminimalk
 - Kurang Interpretatif: Hasil model lebih sulit dipahami.
 - Tidak Memberikan Probabilitas Langsung: Probabilitas kelas memerlukan estimasi tambahan.
 
+**Confussion Matrix SVM Model**
+![image](https://github.com/user-attachments/assets/2b5907e9-b129-4b6f-a249-1d2e2468e257)
+
+**Akurasi SVM Model**
+![image](https://github.com/user-attachments/assets/ddf63f51-b33d-4c1c-9534-8d01b0b78194)
+
+**Classification Report SVM Model**
+![image](https://github.com/user-attachments/assets/13e7ee96-848a-4ab5-852e-ad3856e8d204)
+
+
+
+
 ### Logistic Regression (LR)
 Cara Kerja:
 Menentukan threshold (biasanya 0.5) untuk memutuskan kelas.
@@ -126,17 +148,23 @@ Menentukan threshold (biasanya 0.5) untuk memutuskan kelas.
 - Kurang Baik pada Dimensi Tinggi: Tidak seefisien SVM untuk data dengan banyak fitur.
 - Tidak Optimal pada Data Non-linear: Harus diubah dengan fitur tambahan atau teknik polinomial.
 
+**Confussion Matrix Logistic Regression Model**
+![image](https://github.com/user-attachments/assets/a56e30b7-1a68-4683-a6e5-f3f781bd2195)
+
+
+**Akurasi Logistic Regression Model**
+![image](https://github.com/user-attachments/assets/32347ff9-2530-4a96-9a10-b8672a06a509)
+
+
+**Classification Report Logistic Regression Model**
+![image](https://github.com/user-attachments/assets/b361b652-23e5-43c1-aea7-435b783bf94e)
+
+
+
+
 ## Evaluation
 Setelah dilakukan pra-pemrosesan pada dataset, langkah selanjutnya adalah modeling terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu SVM dan Logistik Regression dengan tanpa parameter tambahan. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji. Terakhir kedua model akan diukur nilai akurasinya. Perbandingan Hasil dari kedua model adalah berikut : 
-![image](https://github.com/user-attachments/assets/0c6f4fec-1466-4a74-add1-4f1a7a1958a4)
-
-
-### Support Vector Machine
-![image](https://github.com/user-attachments/assets/4985b540-2401-44d9-bfba-f4f5419ddd19)
-
-
-### Logistic Regression
-![image](https://github.com/user-attachments/assets/56b93750-38f2-4300-a83b-65b86e105b4b)
+![image](https://github.com/user-attachments/assets/7bd2085e-70f2-42c6-a9e6-26e0c2090335)
 
 
 **Akurasi** merupakan metrik untuk menghitung persentase dari total data yang diidentifikasi dan dinilai benar. Rumus akurasi sebagai berikut: 
@@ -157,6 +185,18 @@ False Negative (FN): Kasus dimana model memprediksi nilai 1 tetapi jawaban yang 
 **f1-score** merupakan metrik untuk perbandingan rata-rata precision dan recall yang dibobotkan. Rumus f1-score sebagai berikut: 
 ![Alt text](https://tse2.mm.bing.net/th?id=OIP.A0Lu2dZfWsCMqWlhw1ZNfQHaB3&pid=Api&P=0&h=180)
 
+# Kesimpulan
+Dengan ini dapat disimpulkan bahwa :    
+1. Untuk pra-pemrosesan data dapat dilakukan beberapa teknik, diantaranya :
+- Melakukan drop kolom pada kolom ID.
+- Melakukan Encoding terhadap kolom yang bertipe object.
+- Melakukan pembagian dataset menjadi dua bagian dengan rasio 80% untuk data latih dan 20% untuk data uji.
+- Melakukan Standard Scaler.
+
+2. Pada data understanding didapatkan insight dari melakukan EDA pada tiap fitur serta mengetahui fitur mana saja yang memiliki nilai korelasi mendekati 1 terhadap target antara lain :     
+radius_mean, parameter_mean, area_mean, concave_points_mean, radius_worst, perimeter_worst, area_worst, dan convcave_points_worst.
+
+3. Setelah dilakukan proses klasifikasi menggunakan model SVM dan Logistic Regression, dapat disimpulkan bahwa model dengan akurasi terbaik adalah Logistic Regression dengan akurasi mencapai 97%
 
 **---Terima kasih---**
 
