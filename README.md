@@ -86,6 +86,7 @@ Target analisis data ini adalah fitur "diagnosis" yang memiliki 357 data Benign 
 
 **8 Fitur yang memiiki nilai korelasi mendekati 1 terhadap Target yang artinya mempengaruhi target**
 ![image](https://github.com/user-attachments/assets/75f08175-ecf5-423e-ac69-8c5ce810f7f0)
+
 Fitur yang memiliki nilai korelasi mendekati 1 terhadap target antara lain :
 radius_mean, parameter_mean, area_mean, concave_points_mean, radius_worst, perimeter_worst, area_worst, dan convcave_points_worst.
 
@@ -121,12 +122,17 @@ Optimasi dilakukan untuk memaksimalkan margin antara dua kelas sambil meminimalk
 - Tidak Memberikan Probabilitas Langsung: Probabilitas kelas memerlukan estimasi tambahan.
 
 **Confussion Matrix SVM Model**
+
 ![image](https://github.com/user-attachments/assets/2b5907e9-b129-4b6f-a249-1d2e2468e257)
 
+
 **Akurasi SVM Model**
+
 ![image](https://github.com/user-attachments/assets/ddf63f51-b33d-4c1c-9534-8d01b0b78194)
 
+
 **Classification Report SVM Model**
+
 ![image](https://github.com/user-attachments/assets/13e7ee96-848a-4ab5-852e-ad3856e8d204)
 
 
