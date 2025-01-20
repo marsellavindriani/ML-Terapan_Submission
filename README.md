@@ -117,6 +117,10 @@ Cara Kerja:
 Menggunakan kernel trick (seperti RBF, polynomial, sigmoid) untuk memetakan data ke dimensi yang lebih tinggi, sehingga menjadi lebih mudah dipisahkan.
 Optimasi dilakukan untuk memaksimalkan margin antara dua kelas sambil meminimalkan kesalahan klasifikasi.
 
+![image](https://github.com/user-attachments/assets/f213e10e-d8eb-4d21-9086-6254bf395377)
+
+
+
 **Kelebihan SVM**:
 - Efisien pada Dimensi Tinggi: Cocok untuk dataset dengan banyak fitur.
 - Robust terhadap Overfitting: Karena memaksimalkan margin, SVM cenderung generalisasi dengan baik.
@@ -128,6 +132,39 @@ Optimasi dilakukan untuk memaksimalkan margin antara dua kelas sambil meminimalk
 - Pemilihan Hyperparameter Sulit: Kernel, C (regularisasi), dan gamma membutuhkan tuning.
 - Kurang Interpretatif: Hasil model lebih sulit dipahami.
 - Tidak Memberikan Probabilitas Langsung: Probabilitas kelas memerlukan estimasi tambahan.
+
+
+
+
+
+
+### Logistic Regression (LR)
+Cara Kerja:
+Memprediksi probabilitas terjadinya kejadian tertentu berdasarkan nilai variabel independen. Alih-alih menggunakan garis lurus, regresi logistik menggunakan fungsi logit untuk memodelkan hubungan antara variabel. 
+
+![image](https://github.com/user-attachments/assets/1a737ba7-22db-432e-ab80-62090925a17b)
+
+
+**Kelebihan Logistic Regression:**
+- Sederhana dan Cepat: Cocok untuk dataset besar dan menghasilkan hasil dalam waktu singkat.
+- Interpretatif: Koefisien fitur memberikan wawasan tentang hubungan dengan variabel target.
+- Probabilitas Kelas: Memberikan probabilitas prediksi, mempermudah pengambilan keputusan.
+- Tahan terhadap Noise: Model cukup stabil terhadap data yang tidak terlalu kompleks.
+
+**Kekurangan Logistic Regression:**
+- Linear Assumption: Tidak cocok untuk data yang tidak dapat dipisahkan secara linear tanpa transformasi.
+- Rentan terhadap Multikolinearitas: Korelasi tinggi antar-fitur dapat memengaruhi performa.
+- Kurang Baik pada Dimensi Tinggi: Tidak seefisien SVM untuk data dengan banyak fitur.
+- Tidak Optimal pada Data Non-linear: Harus diubah dengan fitur tambahan atau teknik polinomial.
+
+
+
+
+
+## Evaluation
+Setelah dilakukan pra-pemrosesan pada dataset, langkah selanjutnya adalah modeling terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu SVM dan Logistik Regression dengan tanpa parameter tambahan. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji. Terakhir kedua model akan diukur nilai akurasinya. Perbandingan Hasil dari kedua model adalah berikut :
+
+![image](https://github.com/user-attachments/assets/7bd2085e-70f2-42c6-a9e6-26e0c2090335)
 
 **Confussion Matrix SVM Model**
 
@@ -144,24 +181,6 @@ Hasil confussion matriks SVM Classifier adalah 68 (True Positive) 2 (False Negat
 
 ![image](https://github.com/user-attachments/assets/13e7ee96-848a-4ab5-852e-ad3856e8d204)
 
-
-
-
-### Logistic Regression (LR)
-Cara Kerja:
-Menentukan threshold (biasanya 0.5) untuk memutuskan kelas.
-
-**Kelebihan Logistic Regression:**
-- Sederhana dan Cepat: Cocok untuk dataset besar dan menghasilkan hasil dalam waktu singkat.
-- Interpretatif: Koefisien fitur memberikan wawasan tentang hubungan dengan variabel target.
-- Probabilitas Kelas: Memberikan probabilitas prediksi, mempermudah pengambilan keputusan.
-- Tahan terhadap Noise: Model cukup stabil terhadap data yang tidak terlalu kompleks.
-
-**Kekurangan Logistic Regression:**
-- Linear Assumption: Tidak cocok untuk data yang tidak dapat dipisahkan secara linear tanpa transformasi.
-- Rentan terhadap Multikolinearitas: Korelasi tinggi antar-fitur dapat memengaruhi performa.
-- Kurang Baik pada Dimensi Tinggi: Tidak seefisien SVM untuk data dengan banyak fitur.
-- Tidak Optimal pada Data Non-linear: Harus diubah dengan fitur tambahan atau teknik polinomial.
 
 **Confussion Matrix Logistic Regression Model**
 
@@ -181,10 +200,7 @@ Hasil confussion matriks LogReg Classifier adalah 70 (True Positive) 2 (False Ne
 
 
 
-## Evaluation
-Setelah dilakukan pra-pemrosesan pada dataset, langkah selanjutnya adalah modeling terhadap data. Pada tahap ini menggunakan 2 algoritma yaitu SVM dan Logistik Regression dengan tanpa parameter tambahan. Pertama-tama kedua model ini dilatih menggunakan data latih. Setelah itu kedua model akan diuji dengan data uji. Terakhir kedua model akan diukur nilai akurasinya. Perbandingan Hasil dari kedua model adalah berikut :
 
-![image](https://github.com/user-attachments/assets/7bd2085e-70f2-42c6-a9e6-26e0c2090335)
 
 
 **Akurasi** merupakan metrik untuk menghitung persentase dari total data yang diidentifikasi dan dinilai benar. Rumus akurasi sebagai berikut: 
