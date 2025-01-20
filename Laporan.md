@@ -17,12 +17,12 @@ Kanker payudara menjadi jenis kanker yang menempati posisi penyumbang kematian t
 berdasarkan latar belakang diatas, berikut ini rumusan masalah yang dapat diselesaikan pada proyek ini:
 1. Bagaimana cara melakukan pra-pemrosesan pada data penyakit kanker payudara yang akan digunakan untuk membuat model yang baik?
 2. Fitur apa saja yang memiliki korelasi tinggi terhadap target?
-3. Model Machine Learning apa yang paling efektif untuk klasifikasi data Breast Cancer ini?
+3. Algoritma Machine Learning apa yang paling efektif antara SVM Classifier dan Logistic Regression Classifier untuk klasifikasi diagnosis kanker payudara?
 
 ### Goals
 1. Mengetahui cara pra-pemrosesan dengan baik agar dapat digunakan dalam pembuatan model.
 2. Mengetahui fitur apa saja yang memiliki korelasi mendekati 1 sehingga berpengaruh terhadap target.
-3. Mengetahui cara membuat model machine learning untuk memprediksi penyakit kanker payudara.
+3. Mengetahui algoritma machine learning apa yang paling efektif untuk klasifikasi diagnosis kanker payudara.
 
 ### Solution Statements
 Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya :
@@ -103,7 +103,7 @@ radius_mean, parameter_mean, area_mean, concave_points_mean, radius_worst, perim
 ## Data Preparation
 Tahap ini dilakukan untuk mempersiapkan data untuk memasuki tahap modeling. Adapun beberapa langkah yang dilakukan pada data preparation antara lain :
 1. Drop kolom "id"
-2. Melakukan label encoding untuk mengurangi dimensi data
+2. Melakukan label encoding untuk mengonversi data kategorikal (seperti teks) menjadi nilai numerik agar bisa diproses oleh algoritma machine learning.
 3. Mendefinisikan kolom X sebagai target dan y sebagai fitur
 4. Split data training dan testing 
 5. Melakukan standarisari data
@@ -115,7 +115,7 @@ Berikut cara kerja, kelebihan dan kekurangan algoritma SVM dan Logistic Regressi
 ### Support Vector Machine (SVM)
 Cara Kerja:
 Menggunakan kernel trick (seperti RBF, polynomial, sigmoid) untuk memetakan data ke dimensi yang lebih tinggi, sehingga menjadi lebih mudah dipisahkan.
-Optimasi dilakukan untuk memaksimalkan margin antara dua kelas sambil meminimalkan kesalahan klasifikasi.
+Optimasi dilakukan untuk memaksimalkan margin antara dua kelas sambil meminimalkan kesalahan klasifikasi, sementara parameter lainnya menggunakan nilai default.
 
 ![image](https://github.com/user-attachments/assets/f213e10e-d8eb-4d21-9086-6254bf395377)
 
@@ -140,7 +140,7 @@ Optimasi dilakukan untuk memaksimalkan margin antara dua kelas sambil meminimalk
 
 ### Logistic Regression (LR)
 Cara Kerja:
-Memprediksi probabilitas terjadinya kejadian tertentu berdasarkan nilai variabel independen. Alih-alih menggunakan garis lurus, regresi logistik menggunakan fungsi logit untuk memodelkan hubungan antara variabel. 
+Memprediksi probabilitas terjadinya kejadian tertentu berdasarkan nilai variabel independen. Alih-alih menggunakan garis lurus, regresi logistik menggunakan fungsi logit untuk memodelkan hubungan antara variabel, sementara parameter lainnya menggunakan nilai default. 
 
 ![image](https://github.com/user-attachments/assets/1a737ba7-22db-432e-ab80-62090925a17b)
 
